@@ -1,0 +1,30 @@
+---
+interface Props {
+    heading: string;
+    title: string;
+    marker: string;
+    subtitle: string;
+}
+
+const { subtitle, title, heading, marker } = Astro.props;
+---
+
+<div class="mb-20 relative overflow-hidden">
+    <h2
+        class="bg-gray-300 w-fit mx-auto px-5 py-1 rounded-xl uppercase mb-5 text-sm font-montserrat"
+    >
+        {heading}
+    </h2>
+    <h3 class="text-center font-montserrat text-3xl sm:text-5xl font-bold">
+        {title}
+        <span
+            class="bg-gradient-to-r from-red-500 to-red-800 bg-clip-text text-transparent"
+            >{marker}</span
+        >
+    </h3>
+    <p
+        class="text-center max-w-3xl mx-auto mt-5 text-gray-600 text-lg sm:text-xl text-pretty font-inter"
+    >
+        {subtitle}
+    </p>
+</div>

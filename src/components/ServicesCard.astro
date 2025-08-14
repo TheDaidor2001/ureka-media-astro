@@ -1,0 +1,22 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+}
+
+const { subtitle, title } = Astro.props;
+---
+
+<article
+    class="shadow-lg p-10 rounded-xl hover:-translate-y-2 hover:shadow-2xl transition-transform duration-500 group bg-white"
+>
+    <slot />
+    <h5
+        class="mt-7 text-2xl font-montserrat font-bold group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:via-red-600 group-hover:to-red-800 group-hover:bg-clip-text group-hover:text-transparent transition duration-500"
+    >
+        {title}
+    </h5>
+    <p class="font-inter mt-3 text-gray-700 text-md">
+        {subtitle}
+    </p>
+</article>

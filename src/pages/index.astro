@@ -1,9 +1,18 @@
 ---
-import Marker from "../components/icons/Marker.astro";
+import Camera from "../components/icons/Camera.astro";
+import Edit from "../components/icons/Edit.astro";
+import Marketing from "../components/icons/Marketing.astro";
+import Medal from "../components/icons/Medal.astro";
+import Microphone from "../components/icons/Microphone.astro";
+import Video from "../components/icons/Video.astro";
+import MetricasCard from "../components/MetricasCard.astro";
+import ServicesCard from "../components/ServicesCard.astro";
+import Heading from "../components/shared/Heading.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
+	<!--Hero Section -->
 	<section
 		class="relative h-[calc(100vh-4rem)] overflow-hidden font-montserrat"
 	>
@@ -24,15 +33,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 		<div
 			class="absolute inset-0 flex flex-col justify-center px-8 md:px-16 lg:px-24 max-w-5xl"
 		>
-			<div
+			<h1
 				class="ml-1 bg-gray-300 w-fit px-5 py-2 rounded-2xl mb-5 border border-gray-800 flex gap-x-2 items-center"
 			>
-				<Marker classname="size-5 text-red-600" />
-				<p class="font-medium text-xs sm:text-lg">
-					Mejor audiovisual de Guinea Ecuatorial
-				</p>
-			</div>
-			<h1
+				<Medal classname="size-7 text-red-600" />
+				<span class="font-medium text-sm sm:text-xl font-montserrat"
+					>Ureka Media Plus</span
+				>
+			</h1>
+			<h2
 				class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl"
 			>
 				Damos <span class="text-red-600">Vida</span> a lo que <span
@@ -40,7 +49,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 				>
 					Imaginas.</span
 				>
-			</h1>
+			</h2>
 			<p
 				class="mt-4 text-xl md:text-2xl text-gray-600 max-w-2xl font-normal font-inter"
 			>
@@ -51,23 +60,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 			<!-- Métricas -->
 			<div class="mt-6 flex gap-8">
-				<div>
-					<p class="text-2xl md:text-3xl font-bold text-center">
-						50+
-					</p>
-					<p class="text-xs md:text-sm ml-1 text-center">
-						Proyectos acabados
-					</p>
-				</div>
-				<div>
-					<p class="text-2xl md:text-3xl font-bold text-center">
-						20+
-					</p>
-					<p class="text-xs md:text-sm ml-1 text-center">
-						Clientes satisfechos
-					</p>
-				</div>
-				<div>
+				<MetricasCard title="50+" subtitle="Proyectos acabados" />
+				<MetricasCard title="20+" subtitle="Clientes satisfechos" />
+				<MetricasCard subtitle="Reseñas de clientes">
 					<p
 						class="text-3xl font-bold text-center flex items-center gap-x-1"
 					>
@@ -76,10 +71,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 							>4.9</span
 						>
 					</p>
-					<p class="text-xs md:text-sm ml-1 text-center">
-						Reseñas de clientes
-					</p>
-				</div>
+				</MetricasCard>
 			</div>
 
 			<!-- Botones -->
@@ -92,5 +84,88 @@ import MainLayout from "../layouts/MainLayout.astro";
 				</a>
 			</div>
 		</div>
+	</section>
+	<!--Servicios Section -->
+	<section
+		class="relative max-w-7xl my-16 mx-auto px-5 lg:px-0 overflow-hidden"
+	>
+		<Heading
+			heading="Nuestros servicios"
+			title="Creatividad que"
+			subtitle="Ofrecemos soluciones audiovisuales integrales para ayudar a tu marca a contar su historia a través de imágenes impactantes y contenido atractivo."
+			marker="impulsa."
+		/>
+
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative"
+		>
+			<ServicesCard
+				title="Video Production"
+				subtitle="From corporate videos to commercials, we create compelling visual stories that engage your audience."
+			>
+				<Video
+					classname="bg-gradient-to-b from-blue-500 to-blue-800 text-white rounded-2xl p-3 size-20 group-hover:rotate-6 transition duration-500"
+				/>
+			</ServicesCard>
+			<ServicesCard
+				title="Photography"
+				subtitle="Professional photography services for events, products, portraits, and commercial shoots."
+			>
+				<Camera
+					classname="bg-gradient-to-b from-red-500 to-red-800 text-white rounded-2xl p-3 size-20 group-hover:rotate-6 transition duration-500"
+				/>
+			</ServicesCard>
+			<ServicesCard
+				title="Post-Production"
+				subtitle="Expert editing, color grading, motion graphics, and sound design to perfect your content."
+			>
+				<Edit
+					classname="bg-gradient-to-b from-purple-500 to-purple-800 text-white rounded-2xl p-3 size-20 group-hover:rotate-6 transition duration-500"
+				/>
+			</ServicesCard>
+			<ServicesCard
+				title="Marketing empresarial"
+				subtitle="Optimización de videos para SEO, gestión de campañas publicitarias y análisis de resultados."
+			>
+				<Marketing
+					classname="bg-gradient-to-b from-green-500 to-green-800 text-white rounded-2xl p-3 size-20 group-hover:rotate-6 transition duration-500"
+				/>
+			</ServicesCard>
+			<ServicesCard
+				title="Locución y Voice-over"
+				subtitle="Grabación profesional de narraciones para videos corporativos, comerciales o animaciones."
+			>
+				<Microphone
+					classname="bg-gradient-to-b from-orange-500 to-orange-800 text-white rounded-2xl p-3 size-20 group-hover:rotate-6 transition duration-500"
+				/>
+			</ServicesCard>
+		</div>
+
+		<a
+			href="#"
+			class="mt-16 mb-10 flex gap-x-4 bg-white shadow-xl w-fit mx-auto px-5 py-5 rounded-xl hover:-translate-y-2 transition-transform duration-300 items-center"
+		>
+			<div class="flex">
+				<Video
+					classname="bg-gradient-to-b from-blue-500 to-blue-800 text-white rounded-2xl p-3 size-10"
+				/>
+				<Microphone
+					classname="-ml-2 bg-gradient-to-b from-orange-500 to-orange-800 text-white rounded-2xl p-3 size-10"
+				/>
+				<Marketing
+					classname="-ml-2 bg-gradient-to-b from-green-500 to-green-800 text-white rounded-2xl p-3 size-10"
+				/>
+			</div>
+			<div>
+				<h5 class="font-bold font-montserrat text-xs sm:text-sm">
+					¿Listo para crear algo increíble?
+				</h5>
+				<p
+					class="text-xs text-left md:text-center text-gray-600 font-montserrat"
+				>
+					Hablemos de tu próximo proyecto
+				</p>
+			</div>
+		</a>
 	</section>
 </MainLayout>
