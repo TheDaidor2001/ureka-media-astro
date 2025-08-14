@@ -3,12 +3,12 @@
 ---
 
 <nav class="bg-white px-6 py-3 font-montserrat font-medium shadow-md w-full">
-    <div class="flex justify-between items-center">
+    <div class="grid grid-cols-2 lg:grid-cols-3 justify-between items-center">
         <!-- Logo -->
         <p class="text-xl font-bold">Logo</p>
 
         <!-- Menu desktop -->
-        <ul class="hidden md:flex gap-x-5 justify-center items-center">
+        <ul class="hidden lg:flex gap-x-5 justify-center items-center">
             <li
                 class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
             >
@@ -32,7 +32,7 @@
         </ul>
 
         <!-- Botones desktop -->
-        <ul class="hidden md:flex gap-x-5">
+        <ul class="hidden lg:flex gap-x-5 justify-end">
             <li
                 class="border-2 border-blue-950 px-3 py-2 text-blue-950 rounded-md hover:bg-blue-950 hover:text-white hover:scale-105 transition-all cursor-pointer"
             >
@@ -46,7 +46,10 @@
         </ul>
 
         <!-- Botón hamburguesa -->
-        <div class="md:hidden flex flex-col cursor-pointer" id="hamburger">
+        <div
+            class="lg:hidden flex flex-col cursor-pointer items-end"
+            id="hamburger"
+        >
             <span class="w-7 h-1 bg-black mb-1 rounded transition-all"></span>
             <span class="w-7 h-1 bg-black mb-1 rounded transition-all"></span>
             <span class="w-7 h-1 bg-black rounded transition-all"></span>
