@@ -1,0 +1,125 @@
+---
+
+---
+
+<nav class="bg-white px-6 py-3 font-montserrat font-medium shadow-md w-full">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <p class="text-xl font-bold">Logo</p>
+
+        <!-- Menu desktop -->
+        <ul class="hidden md:flex gap-x-5 justify-center items-center">
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Inicio</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Servicios</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Trabajos</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Testimonios</a>
+            </li>
+        </ul>
+
+        <!-- Botones desktop -->
+        <ul class="hidden md:flex gap-x-5">
+            <li
+                class="border-2 border-blue-950 px-3 py-2 text-blue-950 rounded-md hover:bg-blue-950 hover:text-white hover:scale-105 transition-all cursor-pointer"
+            >
+                Portfolio
+            </li>
+            <li
+                class="border-2 border-red-600 px-3 py-2 text-white bg-red-600 rounded-md hover:scale-105 transition-transform cursor-pointer"
+            >
+                Contacto
+            </li>
+        </ul>
+
+        <!-- Botón hamburguesa -->
+        <div class="md:hidden flex flex-col cursor-pointer" id="hamburger">
+            <span class="w-7 h-1 bg-black mb-1 rounded transition-all"></span>
+            <span class="w-7 h-1 bg-black mb-1 rounded transition-all"></span>
+            <span class="w-7 h-1 bg-black rounded transition-all"></span>
+        </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div
+        class="md:hidden max-h-0 overflow-hidden transition-all duration-300"
+        id="mobileMenu"
+    >
+        <ul class="flex flex-col gap-y-3 mt-3">
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Inicio</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Servicios</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Trabajos</a>
+            </li>
+            <li
+                class="cursor-pointer hover:bg-gray-200 px-3 py-2 rounded-md transition-colors"
+            >
+                <a href="/">Testimonios</a>
+            </li>
+            <li
+                class="border-2 border-blue-950 px-3 py-2 text-blue-950 rounded-md hover:bg-blue-950 hover:text-white hover:scale-105 transition-all cursor-pointer text-center"
+            >
+                Portfolio
+            </li>
+            <li
+                class="border-2 border-red-600 px-3 py-2 text-white bg-red-600 rounded-md hover:scale-105 transition-transform cursor-pointer text-center"
+            >
+                Contacto
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const hamburger = document.getElementById("hamburger") as HTMLDivElement;
+    const mobileMenu = document.getElementById("mobileMenu") as HTMLDivElement;
+
+    hamburger.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("max-h-0")) {
+            mobileMenu.classList.remove("max-h-0");
+            mobileMenu.classList.add("max-h-screen");
+        } else {
+            mobileMenu.classList.remove("max-h-screen");
+            mobileMenu.classList.add("max-h-0");
+        }
+
+        // Animación del hamburger
+        hamburger.classList.toggle("open");
+    });
+</script>
+
+<style>
+    /* Animación del icono de hamburguesa */
+    #hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    #hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+</style>

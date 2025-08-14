@@ -1,0 +1,23 @@
+---
+import Navbar from "../components/shared/Navbar.astro";
+import "../styles/global.css";
+
+interface Props {
+    title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Ureka Media - {title}</title>
+    </head>
+    <body class="text-gray-800">
+        <Navbar />
+        <slot />
+    </body>
+</html>
