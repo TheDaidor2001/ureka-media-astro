@@ -1,0 +1,48 @@
+---
+interface Props {
+    imgName: string;
+    title: string;
+    description: string;
+    tag: string;
+    id?: string;
+}
+
+const { description, imgName, tag, title } = Astro.props;
+---
+
+<article
+    class="rounded-xl group overflow-hidden relative hover:scale-105 hover:shadow-xl transition-all duration-500"
+>
+    <div class="overflow-hidden">
+        <img
+            src={`/images/${imgName}`}
+            alt=""
+            class="rounded-t-xl transform group-hover:scale-110 transition-transform duration-500 origin-center"
+        />
+    </div>
+
+    <!-- Contenido -->
+    <div class="px-5 pt-3 pb-5 overflow-hidden">
+        <span class="font-montserrat text-xs text-red-600 font-semibold">
+            {tag}
+        </span>
+        <h5 class="font-montserrat mt-2 text-lg font-bold">
+            {title}
+        </h5>
+        <p class="font-inter text-gray-600 font-light text-sm mt-1">
+            {description}
+        </p>
+    </div>
+
+    <!-- Botón flotante -->
+    <div
+        class="absolute top-0 left-0 w-full flex justify-center -translate-y-full opacity-0 group-hover:translate-y-1/2 group-hover:opacity-100 transition-all duration-500"
+    >
+        <a
+            href="#"
+            class="bg-red-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-red-700 transition-colors duration-300"
+        >
+            Ver proyecto
+        </a>
+    </div>
+</article>

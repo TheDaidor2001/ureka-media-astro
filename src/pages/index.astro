@@ -1,13 +1,16 @@
 ---
 import Camera from "../components/icons/Camera.astro";
 import Edit from "../components/icons/Edit.astro";
+import Link from "../components/icons/Link.astro";
 import Marketing from "../components/icons/Marketing.astro";
 import Medal from "../components/icons/Medal.astro";
 import Microphone from "../components/icons/Microphone.astro";
 import Video from "../components/icons/Video.astro";
 import MetricasCard from "../components/MetricasCard.astro";
+import ProyectCard from "../components/ProyectCard.astro";
 import ServicesCard from "../components/ServicesCard.astro";
 import Heading from "../components/shared/Heading.astro";
+import { PROYECTS } from "../data/Proyects";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
@@ -86,9 +89,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 		</div>
 	</section>
 	<!--Servicios Section -->
-	<section
-		class="relative max-w-7xl my-16 mx-auto px-5 lg:px-0 overflow-hidden"
-	>
+	<section class="max-w-7xl my-16 mx-auto px-5 lg:px-0 overflow-hidden">
 		<Heading
 			heading="Nuestros servicios"
 			title="Creatividad que"
@@ -150,10 +151,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 					classname="bg-gradient-to-b from-blue-500 to-blue-800 text-white rounded-2xl p-3 size-10"
 				/>
 				<Microphone
-					classname="-ml-2 bg-gradient-to-b from-orange-500 to-orange-800 text-white rounded-2xl p-3 size-10"
+					classname="-ml-3 bg-gradient-to-b from-orange-500 to-orange-800 text-white rounded-2xl p-3 size-10"
 				/>
 				<Marketing
-					classname="-ml-2 bg-gradient-to-b from-green-500 to-green-800 text-white rounded-2xl p-3 size-10"
+					classname="-ml-3 bg-gradient-to-b from-green-500 to-green-800 text-white rounded-2xl p-3 size-10"
 				/>
 			</div>
 			<div>
@@ -167,5 +168,37 @@ import MainLayout from "../layouts/MainLayout.astro";
 				</p>
 			</div>
 		</a>
+	</section>
+	<section class="max-w-7xl my-16 mx-auto px-5 lg:px-0">
+		<Heading
+			heading="Nuestros trabajos"
+			title="Proyectos que"
+			subtitle="Explora una selección de nuestros trabajos más destacados, donde combinamos técnica, creatividad y pasión para lograr resultados que inspiran y comunican."
+			marker="impactan."
+		/>
+
+		<a
+			href="#"
+			class="flex items-center gap-x-3 w-fit mx-auto border-2 border-gray-800 px-3 py-2 rounded-md hover:bg-gray-800 hover:text-white transition-colors"
+		>
+			<span> Ver todos los proyectos </span>
+			<Link classname="size-5 mt-1" />
+		</a>
+
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 mt-14"
+		>
+			{
+				PROYECTS.map((proyect) => (
+					<ProyectCard
+						imgName={proyect.images[0]}
+						title={proyect.title}
+						description={proyect.description}
+						id={proyect.id}
+						tag={proyect.tag}
+					/>
+				))
+			}
+		</div>
 	</section>
 </MainLayout>
